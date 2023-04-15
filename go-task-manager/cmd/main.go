@@ -34,19 +34,13 @@ func main() {
 		panic(err)
 	}
 
-	dbStore := DBStore{
-		dbFileName: "database.db",
-	}
-
-	err = dbStore.Init()
+	db, err := InitDB("database.db")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(dbStore.db.Driver())
-
-	// fmt.Println(file.fileContent)
+	fmt.Println(db.db)
 
 	fset := token.NewFileSet()
 

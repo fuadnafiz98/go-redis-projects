@@ -2,16 +2,32 @@ package main
 
 import (
 	"database/sql"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
-type DBStore struct {
-	dbFileName string
-	db         *sql.DB
+type Storage struct {
+	//
 }
 
-func (d *DBStore) Init() error {
-	db, err := sql.Open("sqlite3", d.dbFileName)
-	d.db = db
+type DBStore struct {
+	db *sql.DB
+}
 
-	return err
+func InitDB(dbFileName string) (*DBStore, error) {
+	db, err := sql.Open("sqlite3", dbFileName)
+
+	if err != nil {
+		return nil, err
+	}
+
+	err = db.Ping()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &DBStore{
+		db: db,
+	}, nil
 }
