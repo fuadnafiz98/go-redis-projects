@@ -4,3 +4,6 @@
   
 - go-pub-sub
 - go-rate-limiting
+- go-task-queue
+- go-redis-streams
+
