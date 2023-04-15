@@ -1,0 +1,3 @@
+[submodule "go-pub-sub"]
+	path = go-pub-sub
+	url = https://github.com/fuadnafiz98/go-pub-sub
