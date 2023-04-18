@@ -1,5 +1,9 @@
 # GOLANG X REDIS ... RATE LIMITING
 
+## Things to Learn
+
+- decorator pattern in golang.
+
 ## What is **RATE LIMITING**?
 
 Rate limiting is a way to limit the number of request a user can send in a given time.
